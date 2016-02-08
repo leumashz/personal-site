@@ -1,0 +1,11 @@
+{
+  "name": "cafeteriApp",
+  "version": "0.0.1",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.5.1",
+    "cors": "^2.7.1",
+    "express": "^4.7.1",
+    "method-override": "^2.1.2"
+  }
+}
