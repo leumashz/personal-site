@@ -23,14 +23,15 @@
 	        <ul class="right hide-on-med-and-down" >
 	          <li><a href="#menu">HOME</a></li>
 	          <li><a href="#work">WORK</a></li>
-	          <li><a href="#contacto">CONTACTO</a></li>
+	          <!-- <li><a href="#skills">SKILLS</a></li> -->
+	          <li><a href="#contacto">CONTACT</a></li>
 	        </ul>
 			
 			<!-- navigation drawer para moviles -->
 			<ul id="slide-out" class="side-nav">
     			<li><a href="#menu">HOME</a></li>
 	          	<li><a href="#work">WORK</a></li>
-	          	<li><a href="#contacto">CONTACTO</a></li>
+	          	<li><a href="#contacto">CONTACT</a></li>
   			</ul>
   			<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
@@ -86,7 +87,6 @@
 		</div> 	
 
    	</div>
-	
 	<div class="parallax-container-auto grey lighten-3" id="work">
      	<div class="container space-flow">
      		<div class="row">
@@ -179,7 +179,29 @@
      		</div>
      	</div>
     </div>
-  	
+  	<!-- 
+	<div class="paralax-container-auto deep-purple lighten-1" id="skills">
+		<div class="container space-flow">
+			<div class="row">
+				<div class="col s6 m3">
+					<a class="waves-effect waves-light btn-large deep-orange accent-3">HTML5</a>
+				</div>
+				<div class="col s6 m3">
+					<a class="waves-effect waves-light btn-large deep-orange accent-3">HTML5</a>
+				</div>
+				<div class="col s6 m3">
+					<a class="waves-effect waves-light btn-large deep-orange accent-3">HTML5</a>
+				</div>
+				<div class="col s6 m3">
+					<a class="waves-effect waves-light btn-large deep-orange accent-3">HTML5</a>
+				</div>
+			</div>
+			<div class="row">
+				
+			</div>
+		</div>
+	</div> -->
+
   	<div class="parallax-container purple darken-3" id="contacto">
     	<div class="container space-flow">
     		<div class="row">
@@ -210,12 +232,20 @@
 				    	<button class="btn waves-effect waves-light purple lighten-3 waves-purple" type="submit" name="action" id="submit">Enviar
 				  </button>			    
 				</form>
-
+			<a href=".modal1"></a>
 			</div>
     	</div>
     </div>
   	
-  	
+ 
+  
+
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>Hola :D </h4>
+      <p>Este sitio web aun se encuentra en construcción</p>
+    </div>
+  </div>
 	
 	<!-- JQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -224,6 +254,10 @@
   	<script src="js/materialize.min.js"></script>
   	<script src="js/jquery.scrollTo.min.js"></script>
   	<script src="js/init.js"></script>
+	
+	<script>$(document).ready(function(){
+     $('#modal1').openModal();
+  });</script>
 
 </body>
 </html>
