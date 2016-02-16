@@ -23,25 +23,26 @@ app.use(cors());
 
 //enviar email
 app.post('/', function(req, res){
-	var transporter = nodemailer.createTransport('smtps://samuelgz12345%40gmail.com:lwnsekhlcidherqi@smtp.gmail.com');
+	if(req.body.name != null && req.body.email != null && req.body.asunto != null && req.body.mensaje != null){
+		var transporter = nodemailer.createTransport('smtps://samuelgz12345%40gmail.com:lwnsekhlcidherqi@smtp.gmail.com');
+		var mailOptions = {
+		    name: req.body.name,
+		    from: req.body.email, 
+		    to: 'evileumas@gmail.com', 
+		    subject: req.body.asunto, 
+		    html: '<strong>Nombre: </strong> ' + req.body.name.toString() + '<br/>' + '<strong>email: </strong>' + req.body.email.toString() + '<br/>' + '<strong>mensaje: </strong>' + req.body.mensaje.toString()
+		};
 
-	var mailOptions = {
-	    name: req.body.name,
-	    from: req.body.email, 
-	    to: 'evileumas@gmail.com', 
-	    subject: req.body.asunto, 
-	    html: '<strong>Nombre: </strong> ' + req.body.name.toString() + '<br/>' + '<strong>email: </strong>' + req.body.email.toString() + '<br/>' + '<strong>mensaje: </strong>' + req.body.mensaje.toString()
-	};
-
-	transporter.sendMail(mailOptions, function(error, info){
-	    if(error){
-	        return console.log(error);
-	    }
-	    
-	    console.log('Message sent: ' + info.response);
-	    res.redirect('/');
-	});
-
+		transporter.sendMail(mailOptions, function(error, info){
+		    if(error){
+		        return console.log(error);
+		    }
+		    
+		    console.log('Message sent: ' + info.response);
+		    
+		});
+	}
+	res.redirect('/');
 });
 
 
