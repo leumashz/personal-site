@@ -23,7 +23,7 @@ app.use(cors());
 
 //enviar email
 app.post('/', function(req, res){
-	if(req.body.name != null && req.body.email != null && req.body.asunto != null && req.body.mensaje != null){
+	if(req.body.name.toString() != "" && req.body.email.toString() != "" && req.body.asunto.toString() != "" && req.body.mensaje.toString() != ""){
 		var transporter = nodemailer.createTransport('smtps://samuelgz12345%40gmail.com:lwnsekhlcidherqi@smtp.gmail.com');
 		var mailOptions = {
 		    name: req.body.name,
@@ -38,7 +38,7 @@ app.post('/', function(req, res){
 		        return console.log(error);
 		    }
 		    
-		    console.log('Message sent: ' + info.response);
+		    console.log('Message sent: ' + info.response + ' body name: ' + req.body.name.toString());
 		    
 		});
 	}
